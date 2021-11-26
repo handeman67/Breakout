@@ -1,3 +1,4 @@
 {
-  "jshint.enable": false
+  "jshint.enable": false,
+  "jest.jestCommandLine": "jest --watchAll"
 }

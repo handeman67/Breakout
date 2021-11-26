@@ -35,36 +35,7 @@ class Ball extends Block {
   }
 
 
-        e.hits = (inc, e) => {
-            e = this;
-            var d = dist(e.pos.x, e.pos.y, e.inc.x, e.inc.y);
-            if (d < inc.r) {
-                console.log("true");
-                boost();
-                return true;
-            } else {
-                return false;
-            }
-        };
-        e.edges = (e) => {
   
-            e = this;
-            if (e.pos.x > width - e.r) {
-                e.pos.x = -e.r;
-            } else if (e.pos.x < -e.r) {
-                this.pos.x = width + e.r;
-            }
-            if (e.pos.y > height + e.r) {
-                e.pos.y = -e.r;
-            } else if (e.pos.y < -e.r) {
-                e.pos.y = height + e.r;
-            }
-        };
-        e.boost = (e) => {
-            e = this;
-            e.force = p5.Vector.fromAngle(e.heading);
-            e.force.mult(0.5);
-            e.vel.add(e.force);
 
 
 }

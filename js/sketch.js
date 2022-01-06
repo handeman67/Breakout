@@ -4,26 +4,18 @@ function setup() {
 
     createCanvas(wth,hgt, P2D);
     wall(wallspecs);
-   
-    
+
     while (balls < vrs.num) {
         let ball = new Ball(vrs.center, 50, 10, 50);
         balls.push(ball);
-
     }
-
-
     let paddle = new Paddle(vrs.center, hgt-vrs.offset*vrs.Size/2,50,10,0);
     player.push(paddle);
-
     for (let i = 0; i < vrs.num; i++) {
         let block = new Block(random(vrs.Size,wth-vrs.Size), random(hgt),50,10,color(random(255),random(255),random(255)),`${i+1}`);
         blok.push(block);
     }
-
-  
 }
-
 function draw() {
     
     rectMode(RADIUS);
@@ -41,11 +33,13 @@ function draw() {
             W.show_bl();
             // b.hits(W);
             for (let p of player) {
-                p.show_p();
-                p.update_p();
-                p.hits(W,p,100);
+
                 b.hits(p,b,40);
                 b.hits(W,b,50);
+                p.show_p();
+                p.update_p();
+                // p.hits(W,p,100);
+               
                 // W.hits(p,W);
                 // W.hits(b,W);
                 for (let bl of blok) {

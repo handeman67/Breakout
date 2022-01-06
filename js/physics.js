@@ -12,7 +12,5 @@ collisionDetect: {
             let friction = 0.02
             object - object * friction;
         };
-
-
     };
 }

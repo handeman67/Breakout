@@ -11,7 +11,6 @@ class Paddle extends Block{
       !blockcount?this.blockcount=`(${this.pos.y},${ this.pos.x})`:this.blockcount=blockcount;
       this.vel.sub(this.vel);
       this.mass=this.w*this.h/2;
-     this.collide=false;
       }
       show_p(){
          noStroke();
@@ -21,26 +20,24 @@ class Paddle extends Block{
       };
       playerBoundry(){
          console.log("playerBoundry")
-
       }
       update_p(){ 
          this.move();
+       if(this.collide){
+          console.log('colliding')
+       }
       };
       move(){
          let e=this;
-
-
       if (keyIsDown(37)) {
-        
+     
          this.pos.x -= vrs.spd/2;
-      
      }
       if (keyIsDown(39)) {
          this.pos.x += vrs.spd/2;
-       
+   
        }
-   };
-  
+   }
    hits(inc){
       let e = this;
       let d = dist(e.pos.x, e.pos.y, inc.pos.x, inc.pos.y);
@@ -49,21 +46,13 @@ class Paddle extends Block{
        boundry(e);
 if(this.collide){
    console.log("collide");
-   
 }
  }     // if (gamebound.boundryleft&&d <= 108) 
       // { e.pos.x  = gamebound.boundryleft+vrs.Size;console.log("detecting left",this.boundry.left,"d",d);}
       //    //  e.pos.x -= (e.pos.x/2)* vrs.negative}
       //    if (gamebound.boundryright&&d <= 75) 
       //    {e.pos.x=gamebound.boundryright-vrs.Size;console.log("detecting right",this.boundry.right,"d",d);}
-           
-       
-         
-         
-         
-        
-            
-           
+
          //   if(bounces.length>3){
          //    console.log('bounces', d);
          //    bounces.splice(0,1);
@@ -72,6 +61,6 @@ if(this.collide){
       this.move();
       this.collide = false;
       this.bounce=false;
-   };
+   }
 
 }

@@ -56,11 +56,7 @@ let personalBar = window.personalbar;
 let winResize = window.windowResized;
 let viewPort = window.visualViewport = window.visualViewport || {};
 let axcell = window.Accelerometer;
-
 let winCssSheet = window.CSSStyleSheet;
-
-
-
 console.log('personalBar: ', personalBar);
 set.now = (() => { return performance.now || Date.now; });
 console.log('wCssownerRule: ');
@@ -81,17 +77,13 @@ console.log('Storage: ', Storage);
 console.log('sWorker: ', Object.keys(sWorker));
 // console.log('Permissions: ',Object.keys( Permissions));
 console.log('Online: ', Online);
-
 // need to debug the loading issue created by adding the json
 class loadFiles {
     constructor(e) {
-
         let Script = "./Scripts.json";
         return getScript(Script);
 
     }
-
-
     // Script = (a) => {
     //   for (let file in files) {
     //     let scpt = document.createElement("script");
@@ -133,30 +125,22 @@ loadScripts = (script) => {
                 Alert("noJs");
             }
             return this;
-        }
-    }
-};
+        }}};
 async function getScript(sj) {
     const response = await fetch(sj);
     const data = await response.json();
     loadScripts(data.files);
 }
-
-
 // getComputedStyle(document.documentElement)
 //     .getPropertyValue('--my-variable-name'); // #999999
 
 
 // document.addEventListener("DOMContentLoaded", function(event) {
 
-
-
 IF = (A, B) => {
     A = (A) ? A : A = B;
     return this.A;
 };
-
-
 windowResized = () => {
     x = Doms.Wrap.styleWidth = innerWidth;
     y = Doms.Wrap.styleHeight = innerHeight - 80;
@@ -174,15 +158,9 @@ slider1.attributes =
   min = 0,
   max = 100,
   value = 20;`;
-
-
-
 // var output = document.getElementsByClassName('main');
-
-
 // var output1 = document.getElementById("rsoutput1");
 // var hdinput = document.getElementById("hdinput");
-
 // output.append('slider1');
 // hdinput.oninput = function (hdi) {
 //   hdi = this.value;
@@ -200,5 +178,4 @@ slider1.attributes =
 //   output.innerHTML = sld1;
 // }
 // })
-
 //?

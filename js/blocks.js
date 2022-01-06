@@ -7,7 +7,7 @@ class Block {
       !y ? this.y = 50 : this.y = y;
       !blockcount? blockcount="block":blockcount;
       this.blockcount=blockcount;
-      this.inc = [];
+      this.inc = [];   
       this.inc.push("");
       this.pos = createVector(this.x, this.y);
       this.vel = p5.Vector.random2D();
@@ -16,7 +16,7 @@ class Block {
       this.acc = createVector(0, 0);
       this.color=color('yellow');
       this.gravforce = createVector(0, 0.03);
-      this.groundforce = createVector(0, 0.03);
+      this.groundforce = createVector(0, 1);
       this.mass = w * h / 2;
       this.collide = false;
       this.bounce = false;
@@ -43,31 +43,23 @@ class Block {
          if (a.pos.y < this.boundry.top || a.pos.y > this.boundry.bottom) {
             console.log('detect hit','floor and ceiling');
             boost(a);
-         }
-      }
+         } };
       this.show_bl = () => {
          noStroke();
          stroke(this.color);
          fill(this.clr);
           text(this.blockcount, this.w+vrs.Size, this.h+vrs.Size);
          rect(this.pos.x, this.pos.y, this.w, this.h, 10, 10, 10, 10);
-        
-        
-      }
+         };
       this.hits=(inc, a,b)=>{
          let d = dist(a.pos.x, a.pos.y, inc.pos.x, inc.pos.y);
          if (d <= b) {
-           this.collide = true;
-           this.bounce = true;
-           if (this.collide) {
-             console.log(`hit at ${a.pos.y}`, inc)
-           }
-     
-         } else {
-           this.collide = false;
-           this.bounce = false;
-         };
+            this.collide = true;
+            this.bounce = true;     
+          } else {
+            this.collide = false;
+            this.bounce = false;
+          }
        };
-
    }
 }

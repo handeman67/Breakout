@@ -1,4 +1,3 @@
-
    const Arrow=()=>{let v0 = createVector(50, 50);
    let v1 = createVector(mouseX - 50, mouseY - 50);
     push();
@@ -12,8 +11,7 @@
    translate(vec.mag() - arrowSize, 0);
    triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
    pop();
-   drawArrow(v0, v1, 'black');
- 
+   drawArrow(v0, v1, 'black'); 
    let myHeading = v1.heading();
    noStroke();
    text(

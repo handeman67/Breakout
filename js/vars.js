@@ -13,13 +13,10 @@ const vrs={   num: 1,
     spd: 1,
     negative: -1,
     positive: 1,
-   
     angle: Math.PI*2,
     bottom: wth / 1.3,
     center: hgt / 2,
-
 },
-
 gamebound={
 boundryleft:0+vrs.offset ,
 boundryright:wth-vrs.offset,
@@ -28,14 +25,12 @@ boundrytop:vrs.offset,
 },
 wallspecs = [
     leftwall = {
-    
         'x': gamebound.boundryleft,//*
         'y': gamebound.boundrybottom,
         'w': vrs.Size,
         'h':hgt+vrs.Size,
         'c':'rgb(200,0,200)',
         'blockcount':'left'
-
     },
     rightwalll = {
         'x': gamebound.boundryright,

@@ -18,14 +18,34 @@ varib = await function(){return createVector(x, y, z);};
     return varib;
 }
 function wall(spots) {
-    spots.forEach((spot, index) => {
-        wallCount.push(spot);
-        spot.collide=false;
-        spot.bounce=false;
-        let elm = new Block(spot.x, spot.y, spot.w, spot.h, spot.c);
+  Object.keys(spots).forEach((spot, index) => {
+     
+      let ss=spots[spot];
+        wallCount.push(ss);
+        ss.collide=false;
+        ss.bounce=false;
+        let elm = new Block(ss.x, ss.y, ss.w, ss.h, ss.c);
         Walls.push(elm);
+        
     });
 }
+function setBalls(balls,vrs){
+  while (balls < vrs.num) {
+     balls.push(new Ball(vrs.center, 50, 10, 50));};
+ }
+ function setPlayer(player,vrs){
+  player.push(
+    new Paddle(vrs.center, hgt-vrs.offset*vrs.Size/2,50,10,0));
+ }
+function setBloks(blok,vrs){
+  for (let i = 0; i < vrs.num; i++) {
+    blok.push(new Block(random(vrs.Size,wth-vrs.Size),
+     random(hgt),50,10,color(random(255),
+     random(255),random(255)),`${i+1}`));
+    }
+};
+
+
 function Force(x, y, m = 1) {
         this.force=createVector(this.force,x,y);
       this.force.normalize();

@@ -8,9 +8,9 @@ collisionDetect: {
             console.log('normalDetect');
         }
         collisionTransfer: {
-            let object = 1;
-            let friction = 0.02
-            object - object * friction;
+            let object1 = 1,
+            object2=1,friction = 0.02
+            object1- object2 * friction;
         };
     };
 }

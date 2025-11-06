@@ -36,13 +36,15 @@ class Block {
            pop();
        }
       this.detection = (a, b) => {
-         if (a.pos.x > this.boundry.right || a.pos.x < this.boundry.left) {
+         if (a.pos.x >= this.boundry.right || a.pos.x <= this.boundry.left) {
             console.log('detect hit','walls');
-            boost(a);
+            Bounce(a);
+          
          }
-         if (a.pos.y < this.boundry.top || a.pos.y > this.boundry.bottom) {
+         if (a.pos.y <= this.boundry.top || a.pos.y >= this.boundry.bottom) {
             console.log('detect hit','floor and ceiling');
-            boost(a);
+            Bounce(a);
+        
          } };
       this.show_bl = () => {
          noStroke();
@@ -51,12 +53,15 @@ class Block {
           text(this.blockcount, this.w+vrs.Size, this.h+vrs.Size);
          rect(this.pos.x, this.pos.y, this.w, this.h, 10, 10, 10, 10);
          };
-      this.hits=(inc, a,b)=>{
+      this.hits=(inc, a,)=>{
          let d = dist(a.pos.x, a.pos.y, inc.pos.x, inc.pos.y);
-         if (d <= b) {
+         console.log("before",d);
+         if (d <= a.w) {
+            console.log("lessthan");
             this.collide = true;
             this.bounce = true;     
           } else {
+            console.log("morethan");
             this.collide = false;
             this.bounce = false;
           }

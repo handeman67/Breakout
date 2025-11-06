@@ -23,8 +23,8 @@ boundryright:wth-vrs.offset,
 boundrybottom:hgt-vrs.offset,
 boundrytop:vrs.offset,
 },
-wallspecs = [
-    leftwall = {
+wallspecs = {
+    "leftwall" : {
         'x': gamebound.boundryleft,//*
         'y': gamebound.boundrybottom,
         'w': vrs.Size,
@@ -32,7 +32,7 @@ wallspecs = [
         'c':'rgb(200,0,200)',
         'blockcount':'left'
     },
-    rightwalll = {
+    "rightwall" :{
         'x': gamebound.boundryright,
         'y': gamebound.boundrybottom,
         'w': vrs.Size,
@@ -40,7 +40,7 @@ wallspecs = [
         'c': 'rgb(0,200,0)',
         'blockcount':'right'
     },
-    flor = {
+    "flor" : {
         'x': gamebound.boundryright,
         'y': gamebound.boundrybottom,
         'w': wth+vrs.Size,
@@ -48,7 +48,7 @@ wallspecs = [
         'c': 'rgb(0,0,200)',
         'blockcount':'bottom'
     },
-    roof = {
+    "roof" : {
         'x': gamebound.boundrytop,
         'y': gamebound.boundrytop,
         'w': wth+vrs.Size,
@@ -56,4 +56,4 @@ wallspecs = [
         'c': 'rgb(200,50,200)',
         'blockcount':'top'
     }
-];
+};
